@@ -23,6 +23,7 @@ public class ApplicationContextConfig {
 	@Bean
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
+		
 		/*dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/iniyalDB?createDatabaseIfNotExist=true&"
 				+ "verifyServerCertificate=false&useSSL=false&requireSSL=false");
