@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
 
 import org.springframework.stereotype.Service;
 
@@ -29,7 +29,7 @@ public class Note {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int noteId;
 
-	@NotNull
+	
 	@Column(name = "note_title")
 	private String noteTitle;
 

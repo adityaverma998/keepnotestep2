@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -21,7 +22,7 @@ import org.springframework.web.servlet.view.JstlView;
  * */
 
 @Configuration
-@ComponentScan(basePackages = { "com.stackroute.keepnote" })
+@ComponentScan(basePackages = {"com.stackroute.keepnote"})
 @EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
 
