@@ -23,13 +23,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import com.stackroute.keepnote.config.ApplicationContextConfig;
 import com.stackroute.keepnote.controller.NoteController;
 import com.stackroute.keepnote.dao.NoteDAO;
 import com.stackroute.keepnote.model.Note;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = { ApplicationContextConfig.class })
+@ContextConfiguration({"classpath*:spring/applicationContext.xml"})
+//@ContextConfiguration(classes = { ApplicationContextConfig.class })
 @WebAppConfiguration
 public class NoteControllerTest {
 
@@ -45,6 +45,7 @@ public class NoteControllerTest {
 	@InjectMocks
 	private NoteController noteController;
 
+	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() throws Exception {
 		noteController = new NoteController(noteDao);

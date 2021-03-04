@@ -12,17 +12,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import com.stackroute.keepnote.config.ApplicationContextConfig;
 import com.stackroute.keepnote.dao.NoteDAO;
 import com.stackroute.keepnote.dao.NoteDAOImpl;
 import com.stackroute.keepnote.model.Note;
 
 @RunWith(SpringRunner.class)
 @Transactional
-@ContextConfiguration(classes = { ApplicationContextConfig.class })
+@ContextConfiguration({"classpath*:spring/applicationContext.xml"})
+//@ContextConfiguration(classes = { ApplicationContextConfig.class })
 public class NoteDAOImplTest {
 
 	@Autowired
@@ -31,6 +32,7 @@ public class NoteDAOImplTest {
 	private NoteDAO noteDAO;
 	private Note note;
 
+	
 	@Before
 	public void setUp() {
 		noteDAO = new NoteDAOImpl(sessionFactory);
